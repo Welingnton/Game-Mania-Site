@@ -21,14 +21,18 @@ header{
         width: 400px;
         display: flex;
         justify-content: space-between;
-        margin-left: 90px;
+        margin-left: 80px;
     }
     .menu a{
-        color: rgb(247, 242, 242);
+        color: #fff;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Open Sans";
         font-size: 20px;
+    }
+    .barras{
+        width: 30px;
+        display: none;
     }
     .banner{
         background-image:url(../img/banner.png) ;
@@ -42,7 +46,7 @@ header{
     }
     .texto-banner h1{
         width: 500px;
-        color: white;
+        color: #fff;
         text-align: flex;
         font-size: 50px;
         font-family: 'Titillium Web', sans-serif;
@@ -50,15 +54,15 @@ header{
     }
     .texto-banner{
         width: 500px;
-        color: white;
+        color: #fff;
         text-align: flex;
         font-size: 45px;
         font-family: 'Titillium Web', sans-serif;
         font-weight: bold;
     }
     .search-box{
-        background: #f1eff5;
-        height: 40px;
+        background: #fff;
+        height: 42px;
         padding: 15px;
         border-radius: 40px;
         margin-left: 100px;
@@ -68,96 +72,286 @@ header{
         border: 0;
         outline: 0;
         font-size: 20px;
-
     }
-    .lancamento {
+    .produtos{
         background-color: #020b25;
-        height: 35px;
-        
     }
-    .lancamento h2{
-        color: rgb(224, 220, 220);
-        font-family:'Roboto', sans-serif;
+    .release{
+        height: 35px;
+        background-color: #515253;
+    }
+    .release h2{
+        color: #fff;
+        font-family: "Open Sans";
         font-size: 30px;
         text-align: center;
-        
-    }
-    .carousel{
-        background-color: rgb(118, 118, 124);
-        height: 300px;
-    }
-    .containner img{
-        height: 20%;
-        width:  20%;
-    }   
-    .barras{
-        width: 30px;
-        display: none;
-    }
-    .videogame{
-        background-color:#0f0f1a;
-        height: 35px;
-    }
-    .videogame h2{
-        color: rgb(224, 220, 220);
-        font-family:'Roboto', sans-serif;
-        font-size: 30px;
-        text-align: center;
-    }
-    .notebook{
-        background-color:#0f0f1a;
-        height: 35px;
-    }
-    .notebook h5{
-        color: rgb(224, 220, 220);
-        font-family:'Roboto', sans-serif;
-        font-size: 30px;
-        text-align: center;
-    }
-    .celulares{
-        background-color:#0f0f1a;
-        height: 35px;
-    }
-    .celulares h2{
-        color: rgb(224, 220, 220);
-        font-family:'Roboto', sans-serif;
-        font-size: 30px;
-        text-align: center;
-    }
-    .mais-vendidos{
-        background-color:#0f0f1a;
-        height: 35px;
-    } 
-    .mais-vendidos h2{
-        color: rgb(224, 220, 220);
-        font-family:'Roboto', sans-serif;
-        font-size: 30px;
-        text-align: center;
-    }
-    }
-   .produtos {
-        background-color: rgb(118, 118, 124);
-        height: 300px;
     }
     
+    a{
+        text-decoration: none;
+    
+    }
+
+    .slider{
+        margin: 25px;
+        width: 20%;
+        background-color: rgb(151, 148, 148);
+        border-radius: 50px;
+        overflow: hidden;
+    }
+    .image{
+        position: relative;
+    }
+    .image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+    .product-details{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        box-sizing: border-box;
+
+    }
+    .product-name{
+         display: flex;
+         flex-direction: column;
+
+     }  
+    .product-name a{
+        margin-top: 5px;
+         color: #fff;
+         margin: right 5px;
+         font-size: 15px;
+         font-weight: bolder;
+     } 
+     span{
+         color: black;
+         margin-top: 5px;
+     }
+    .product-name a{
+         font-size: 16px;
+         font-weight: bold;
+         color: #fff;
+         margin-top: 5px;
+         text-align: center;
+     }
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0,0,0, 0.6);
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        height: 50px;
+        width: 150px;
+        background-color: rgb(71, 9, 218);
+        color:#fff;
+        font-size: 20px;
+        font-weight: bolder;
+
+    }
+    .btn:hover{
+        background-color: #fff;
+        color: rgb(71, 9, 218);
+        transition: all ease 1s;
+
+    }
+    .button{
+        visibility: hidden;
+    }
+    .image:hover .button{
+        visibility: visible;
+        animation: animation 1s;
+
+    }
+    @keyframes animation{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+  
+    .container{
+        display: flex;
+        justify-content: left;
+        height: 520px;
+        width: 5000px;
+        background-color: #020b25;
+        transform: translateX(0);
+        transition: all 0.5s ease-in-out;
+    }
+    .laptops{
+        height: 35px;
+        background-color: #515253;
+    }
+    .laptops h2{
+        color: #fff;
+        font-family: "Open Sans";
+        font-size: 30px;
+        text-align: center;
+    }
+    .games{
+        height: 35px;
+        background-color: #515253;
+    }
+    .games h2{
+        color: #fff;
+        font-family: "Open Sans";
+        font-size: 30px;
+        text-align: center;
+    }
+    .cellphones{
+        height: 35px;
+        background-color: #515253;
+    }
+    .cellphones h2{
+        color: #fff;
+        font-family: "Open Sans";
+        font-size: 30px;
+        text-align: center;   
+    }
+    footer{
+        margin-top: 1px;
+        background-color: #020b25;
+        height: 180px;
+        width: 1349px;
+        font-family: "Open Sans";
+        padding-top: 40px;
+        color:#fff;
+       
+    }
+    .footer-content{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+    }
+    .footer-content h5{
+        font-size: 40px;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+    }
+    .footer-content p{
+        max-width: 500px;
+        margin: 10px auto;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    .socials{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 30px;
+        
+    }
+    .socials li{
+        margin: 0 10px;
+
+    }   
+    .socials a{
+        text-decoration: none;
+        color:#fff;
+
+    }  
+    .socials a i{
+        font-size: 1.1rem;
+        transition:color .4s ease;
+
+    }
+    .socials a:hover i{
+        color: aqua;
+
+    }
+    .footer-bottom{
+        background: rgb(116, 115, 119);
+        height: 45px;
+        width: 1349px;
+        padding: 20px 0;
+        text-align: center;
+
+    }
+    .footer-bottom p{
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+
+    }
+    .footer-bottom span{
+        text-transform: uppercase;
+        opacity: .6;
+        font-weight: 200;
+
     }
     @media screen and (max-width: 1200px) {
         .container-grid{
-            width: 90%;
+            width: 50px;
+        }
+        .position-header{
+            width: 20px;
+        }
+        .menu{
+            width: 20px;
         }
         .menu a{
             font-size: 16px;
         }
-        
-
-        }
         .logo{
-            width: 350px;
+            width: 200px;
+    
+        }
+        .search-box{
+           width: 100px;
+        }
+        .banner{
+            font-size: auto;
+        }
+        .footer{
+            width: 20px;
         }
     }
     @media screen and (max-width: 768px) {
         
+        .barras{
+            display:inline-block;
         }
-    }
+        .menu{
+            display: none;
+            flex-direction: column;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            right: 65px;
+            background-color: ;
+
+        }
+        .menu a{
+            text-align: center;
+            display: flex;
+        }
+        .position-header{
+            position: relative;
+        }
+        }
+    
     
   
